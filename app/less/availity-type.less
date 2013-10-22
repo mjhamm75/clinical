@@ -1,0 +1,95 @@
+b {
+  display: block;
+}
+
+i {
+  font-style: normal;
+}
+
+a {
+  cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+
+  small {
+    color: @grayDark;
+  }
+}
+
+hr.page-divider {
+  border: none;
+  margin: 2em 0;
+  .clearfix()
+}
+
+.help-topic {
+  text-decoration: none;
+  cursor: help;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+abbr[data-help], abbr[data-help-url] {
+  cursor: help;
+  border-bottom: 1px dotted @grayLight;
+}
+
+i[class^="icon-"]:before {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/*
+a[href^="tel:"]:before,  {
+  content: '\f098';
+  display: block;
+  margin-right: 0.5em;
+}
+
+a[href^="mailto:"]:before,  {
+  content: '\f0e0';
+  display: block;
+  margin-right: 0.5em;
+}
+*/
+
+.fax, .phone {
+  white-space: nowrap;
+  font-weight: bold;
+}
+
+.unstyled {
+  h1, h2, h3, h4, h5, h6 {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.term {
+  padding: 0 4px;
+  border: 1px solid @grayDarker;
+  .border-radius(3px);
+  margin-right: 3px;
+}
+
+.term-inverse {
+  border: 1px solid @grayLight;
+  background-color: @grayLighter;
+}
+
+.definition {
+  // nothing to see here now
+}
+
+// Syntax highlighting
+
+.string { color: #aa0088; }
+.number { color: #0000ff; }
+.boolean { color: #aa0088; }
+.null { color: #ff00ff; }
+.key { color: #000000; }
+
