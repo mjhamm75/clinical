@@ -1,0 +1,11 @@
+.navbar-inner {
+  background: #4d4f53;
+  border-bottom: 1px solid orange;
+}
+.clinical-subnav {
+  background-color: #d9d9d6;
+  height: 40px;
+}
+.clinical-subnav input {
+  margin-top: 4px;
+}
