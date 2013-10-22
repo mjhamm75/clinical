@@ -313,8 +313,17 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    less: {
+      development: {
+        files: {
+          'app/styles/clinical.css': 'app/styles/clinical.less'
+        }
+      }
     }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {
