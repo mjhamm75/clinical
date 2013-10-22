@@ -2,14 +2,16 @@
 
 describe('Clinical App', function() {
 
-  var element, $scope;
+  var element, $scope, template;
   beforeEach(module('clinicalApp'));
 
   describe('clinicalHeader', function() {
-    beforeEach(inject(function($rootScope, $compile) {
+    beforeEach(module('views/header.html'));
+
+    beforeEach(inject(function($templateCache, $rootScope, $compile) {
       $scope = $rootScope;
-      element = '<ul><li>Jason</li><li>Hamm</li><li>Test</li></li>';
-      element = $compile(element)($rootScope);
+      element = angular.element('<clinical-header></clinical-header>');
+      element = $compile(template)($rootScope);
       $scope.$digest();
     }));
 

@@ -17,8 +17,15 @@ module.exports = function(config) {
       'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
-      'test/spec/**/*.js'
+      'test/spec/**/*.js',
+
+      'app/views/**/*.html'
+    ],
+
+    preprocessors: [
+      {
+        'app/views/**/*.html': 'html2js'
+      }
     ],
 
     // list of files / patterns to exclude
