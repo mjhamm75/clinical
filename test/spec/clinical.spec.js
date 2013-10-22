@@ -2,17 +2,15 @@
 
 describe('Clinical App', function() {
 
+  var element, $scope;
   beforeEach(module('clinicalApp'));
-  var element, scope;
 
   describe('clinicalHeader', function() {
     beforeEach(inject(function($rootScope, $compile) {
-      scope = $rootScope;
-
+      $scope = $rootScope;
       element = '<ul><li>Jason</li><li>Hamm</li><li>Test</li></li>';
-
-      $compile(element)(scope);
-      scope.$digest();
+      element = $compile(element)($rootScope);
+      $scope.$digest();
     }));
 
     it('should have a list', function() {
