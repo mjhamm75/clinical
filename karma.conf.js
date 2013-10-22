@@ -11,6 +11,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'app/bower_components/jquery/jquery.js',
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
       'app/bower_components/angular-route/angular-route.js',
@@ -22,11 +23,9 @@ module.exports = function(config) {
       'app/views/**/*.html'
     ],
 
-    preprocessors: [
-      {
-        'app/views/**/*.html': 'html2js'
-      }
-    ],
+    preprocessors: {
+      'app/views/*.html': 'ng-html2js'
+    },
 
     // list of files / patterns to exclude
     exclude: [],
