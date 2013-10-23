@@ -38,7 +38,6 @@ describe('Clinical App', function() {
       }));
 
       it('should give a table of encounters', function() {
-        console.log(element);
       });
     });
 
@@ -133,3 +132,4 @@ describe('Clinical App', function() {
 
   });
 });
+};
