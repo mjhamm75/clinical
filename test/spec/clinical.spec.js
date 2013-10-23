@@ -2,19 +2,19 @@
 
 describe('Clinical App', function() {
 
-  var element, scope, template;
+  var  template, element;
 
   beforeEach(module('clinicalApp'));
 
   describe('clinicalHeader', function() {
     beforeEach(module('app/views/header.html'));
 
-    beforeEach(inject(function($templateCache, $rootScope, $compile) {
-      scope = $rootScope;
+    beforeEach(inject(function($templateCache, $compile, $rootScope) {
       template = $templateCache.get('app/views/header.html');
-      $templateCache.put('views/header.html');
-      element = $compile(template)($rootScope);
-      scope.$digest();
+      $templateCache.put('views/header.html', template);
+      var directive = angular.element('<clinical-header></clinical-header>');
+      element = $compile(directive)($rootScope);
+      $rootScope.$digest();
     }));
 
     it('should have a list of links', function() {

@@ -317,7 +317,8 @@ module.exports = function (grunt) {
     less: {
       development: {
         files: {
-          'app/styles/clinical.css': 'app/styles/clinical.less'
+          'app/css/clinical.css': 'app/less/clinical.less',
+          'app/css/availity.css': 'app/less/availity.less'
         }
       }
     }

@@ -1,0 +1,25 @@
+.availity-help {
+  .tooltip {
+    &.in {
+      .opacity(90);
+    }
+  }
+
+  &.popover {
+    min-width: 200px;
+  }
+
+  .tooltip-inner {
+    font-size: 1.2em;
+    font-weight: normal;
+    line-height: 1.6em;
+  }
+
+  .popover-content {
+    font-size: @baseFontSize;
+    font-weight: normal !important;
+    max-height: 15em;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}

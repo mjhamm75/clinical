@@ -2,11 +2,13 @@
   background: #4d4f53;
   border-bottom: 1px solid orange;
 }
-
+.navbar-inner .container ul {
+  margin: 10px;
+}
 .clinical-subnav {
   background-color: #d9d9d6;
   height: 40px;
-  input {
-    margin-top: 4px;
-  }
+}
+.clinical-subnav input {
+  margin-top: 4px;
 }
