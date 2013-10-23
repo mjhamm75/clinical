@@ -1,5 +1,48 @@
-<div>
-  <div ng-repeat="encounter in encounters">
-    <div encounter-item encounter='encounter'></div>
-  </div>
-</div>
+<table id="encounter-table" class="table table-fixed clinical-patients">
+  <thead>
+    <tr>
+      <th style="width: 45%"><span data-help="000">Status</span></th>
+      <th style="width: 20%"><span data-help="001">Patient</span></th>
+      <th style="width: 20%"><span data-help="002">Provider</span></th>
+      <th style="width: 15%"><span data-help="003">Request</span></th>
+    </tr>
+  </thead>
+  <tbody id="encounter-tbody">
+    <tr  ng-class="{selected: $index==selectedIndex}" ng-repeat="encounter in encounters | filter:search" data-id="{{encounter.id}}" ng-click="getSelectedRow($index)">
+      <td class="statusContainer">
+        <div class='status {{encounter.actions | statusName | cssName}}' data-help='authStatus'>
+          <i>{{encounter.actions | statusName | readableStatus}}</i>
+          <i class="pull-right">{{encounter.actions | statusDate | date:'MMM dd, yyyy'}}</i>
+        </div>
+        <div class="payer" data-help='authPayer'>
+          {{encounter.actors | patientPrimaryPayer}}
+        </div>
+        <div data-help='authSubscriber'>
+          <!-- subscriberId -->
+        </div>
+        <div class="createNewAuth">
+          <a href="#/{{encounter.id}}" ng-click="createNewAuth(encounter)">
+            <i class="icon-edit"></i>Detail
+          </a>
+        </div>
+      </td>
+      <td>
+        <i class="patient-name" >{{encounter.patient | patientNameFirstLast }}</i>
+        <br />
+        <i data-help="patientBirthday">{{encounter.patient | patientDob | date:'MMM dd, yyyy'}}</i>
+      </td>
+      <td>
+        <i>provider</i>
+        <br />
+        <i>npi</i>
+      </td>
+      <td>
+        <i>requestType</i>
+        <br />
+        <i>requestDate</i>
+        <br />
+        <i > <i class="icon-file icon-idicator"></i>
+      </td>
+    </tr>
+  </tbody>
+</table>

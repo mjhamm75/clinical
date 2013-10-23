@@ -15,3 +15,20 @@
 .encounter-list {
   margin-top: 10em;
 }
+.div-table {
+  display: table;
+  border-spacing: 5px;
+  /*cellspacing:poor IE support for  this*/
+
+}
+.div-table .div-table-row {
+  display: table-row;
+}
+.div-table .div-table-row .div-table-cell {
+  display: table-cell;
+}
+.payer {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
