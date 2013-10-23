@@ -2,7 +2,7 @@
 
 describe('Clinical App', function() {
 
-  var  template, element;
+  var  template, element, httpBackend; 
 
   beforeEach(module('clinicalApp'));
 
@@ -29,16 +29,25 @@ describe('Clinical App', function() {
 
     describe('encounterList', function() {
       beforeEach(module('app/views/encounter.item.table.html'));
-      beforeEach(inject(function($templateCache, $compile, $rootScope) {
+      beforeEach(inject(function($templateCache, $compile, $injector, $rootScope) {
         template = $templateCache.get('app/views/encounter.item.table.html');
         $templateCache.put('views/encounter.item.table.html', template);
-        var directive = angular.element('<div encounter-item-table></div>');
+        debugger;
+        loadJSONFixtures('base/test/mocks/encounters.json');
+        $rootScope.encounters = getJSONFixture('base/test/mocks/encounters.json');
+        //**********
+        // $rootScope.encounters = ;
+        //**********
+        var directive = angular.element('<div encounter-item-table encounters="encounters"></div>');
         element = $compile(directive)($rootScope);
         $rootScope.$digest();
       }));
 
       it('should give a table of encounters', function() {
-        console.log(element);
+        // console.log(element);
+        // console.log(element.scope().encounters[0].patient.firstName);
+        expect(element.scope().encounters.length).toEqual(5);
+        expect(element.scope().encounters[0].patient.firstName).toEqual('TED');
       });
     });
 
