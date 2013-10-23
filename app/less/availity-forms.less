@@ -1,0 +1,140 @@
+// placeholder shim
+.placeholdersjs {
+  color: @grayLight !important;
+}
+
+.controls-row {
+
+  span.inline-label {
+    padding: @inputPadding 6px;
+    font-size: @fontSizeLarge;
+    line-height: 24px;
+  }
+
+}
+
+.control-group {
+
+  p.alert {
+    margin-top: 10px;
+    padding-right: 0px;
+  }
+
+  &.success{
+    i {
+      color: @successText;
+    }
+  }
+
+  &.error {
+
+    .chzn-choices, .chzn-single-with-drop, .chzn-single, .chzn-drop {
+      border-color:@errorText;
+    }
+
+    .validation {
+      border-color:@errorText;
+    }
+
+    label.tickbox {
+      color: @errorText;
+    }
+
+  }
+}
+
+.error-block {
+  border-left: 3px dotted lighten(@errorBackground, 1%) !important;
+  .border-radius(0px);
+
+  .help-block,
+  .help-inline {
+    font-weight: bold;
+    padding-top: .5em;
+    color: @errorText;
+
+
+    &:before {
+      content: @iconWarning;
+      font-family: @iconFontFamily;
+      padding-right: .25em;
+    }
+
+  }
+}
+
+.input-full {
+  with: 95%;
+}
+
+.form-row {
+  margin: 1em 0;
+  border: 3px dotted rgba(0, 0, 0, 0);
+  padding-left: 0.5em;
+}
+
+.help-block {
+  margin-top: .2em;
+}
+
+// Shared size and type resets
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  color: @grayDarker;
+}
+
+// HTML5 invalid states
+// Shares styles with the .control-group.error above
+input:focus:invalid,
+textarea:focus:invalid,
+select:focus:invalid {
+  color: @red;
+  border-color: @red;
+  &:focus {
+    border-color: darken(@red, 10%);
+    @shadow: 0 0 6px lighten(@red, 20%);
+    .box-shadow(@shadow);
+  }
+}
+
+input.search-query {
+  padding-right: 14px;
+  padding-right: 4px \9;
+  padding-left: 14px;
+  padding-left: 4px \9; /* IE7-8 doesn't have border-radius, so don't indent the padding */
+  margin-bottom: 0; // Remove the default margin on all inputs
+  .border-radius(@baseBorderRadius);
+}
+
+/* Allow for input prepend/append in search forms */
+.form-search .input-append .search-query,
+.form-search .input-prepend .search-query {
+  .border-radius(0); // Override due to specificity
+}
+.form-search .input-append .search-query {
+  .border-radius(@baseBorderRadius 0 0 @baseBorderRadius);
+}
+.form-search .input-append .btn {
+  .border-radius(0 @baseBorderRadius @baseBorderRadius 0);
+}
+.form-search .input-prepend .search-query {
+  .border-radius(0 @baseBorderRadius @baseBorderRadius 0);
+}
+.form-search .input-prepend .btn {
+  .border-radius(@baseBorderRadius 0 0 @baseBorderRadius);
+}

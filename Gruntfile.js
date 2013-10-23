@@ -313,8 +313,18 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    less: {
+      development: {
+        files: {
+          'app/css/clinical.css': 'app/less/clinical.less',
+          'app/css/availity.css': 'app/less/availity.less'
+        }
+      }
     }
   });
+
+  grunt.loadNpmTasks('grunt-contrib-less');
 
   grunt.registerTask('server', function (target) {
     if (target === 'dist') {

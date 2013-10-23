@@ -1,0 +1,109 @@
+.inline(){
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display: inline;
+}
+
+.word-wrap() {
+  -ms-word-break: keep-all;
+  word-break: keep-all;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+.override-gradient() {
+  background-color:transparent;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-image: none;
+  background-repeat: no-repeat;
+  filter: none;
+}
+
+.center() {
+  text-align: center;
+  margin: auto;
+}
+
+// Big buttons, input, dropdowns and block level 'labels' and 'stamps'
+.thick-ui() {
+
+  @chosenPadding: (@inputPadding / 2);
+  @fontSize: @fontSizeLarge;
+
+  .stamp, label {
+    font-size: @fontSize;
+    font-weight: bold;
+    display: block;
+  }
+
+  input[type="text"], textarea[data-type="text"], span.add-on {
+    padding: @inputPadding (@inputPadding / 2);
+    height: auto;
+    font-size: @fontSizeLarge;
+    line-height: 1;
+  }
+
+
+  .chzn-container-single {
+
+    input[type="text"] {
+      padding: (@inputPadding / 2) (@inputPadding / 2);
+    }
+
+    .chzn-single {
+
+      padding: @chosenPadding;
+
+      b {
+        padding-top: 4px;;
+      }
+
+    }
+
+    .chzn-results {
+      padding: @inputPadding @chosenPadding;
+    }
+
+  }
+
+  .chzn-container {
+    font-size: @fontSize;
+
+    .chzn-results li {
+      padding: @inputPadding @chosenPadding;
+    }
+  }
+}
+
+.alert-variant(@background; @border; @text-color) {
+  hr {
+    border-top-color: darken(@border, 5%);
+  }
+  .alert-link {
+    color: darken(@text-color, 10%);
+    border-bottom: 1px dotted @text-color;
+  }
+}
+
+.alert-callout-variant(@background; @border; @text-color) {
+ border-left: 5px solid @border;
+ color: @text-color;
+ background-color: @background;
+ h4 {
+   margin-top: none;
+   color: @text-color;
+ }
+}
+
+.well-variant(@background, @border, @text-color) {
+  background-color: @background;
+  border-color: @border;
+  color: @text-color;
+}
