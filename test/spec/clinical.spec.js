@@ -80,10 +80,10 @@ describe('Clinical App', function() {
 
     describe('patientPrimaryPayer', function() {
       it('should return the primary payer name if the actor type is payer primary', inject(function(patientPrimaryPayerFilter) {
-        expect(patientPrimaryPayerFilter([{name:"payerName", type:'PAYER_PRIMARY'}])).toEqual('payerName');
-        expect(patientPrimaryPayerFilter([{name:"BCBSF / FL", type:'PAYER_PRIMARY'}])).toEqual('BCBSF / FL');
-        expect(patientPrimaryPayerFilter([{name:"yet another payer name", type:'PAYER_PRIMARY'}])).toEqual('yet another payer name');
-        expect(patientPrimaryPayerFilter([{name:"yet another payer name", type:'SOMETHING_ELSE'}])).toEqual('');
+        expect(patientPrimaryPayerFilter([{name:'payerName', type:'PAYER_PRIMARY'}])).toEqual('payerName');
+        expect(patientPrimaryPayerFilter([{name:'BCBSF / FL', type:'PAYER_PRIMARY'}])).toEqual('BCBSF / FL');
+        expect(patientPrimaryPayerFilter([{name:'yet another payer name', type:'PAYER_PRIMARY'}])).toEqual('yet another payer name');
+        expect(patientPrimaryPayerFilter([{name:'yet another payer name', type:'SOMETHING_ELSE'}])).toEqual('');
       }));
     });
 
@@ -107,28 +107,27 @@ describe('Clinical App', function() {
 
     describe('readableStatus', function() {
       it('should turn upper case underscore delimited string into capitalized space delimited string e.g. HELLO_WORLD -> Hello World', inject(function(readableStatusFilter) {
-        expect(readableStatusFilter("TEST_STRING")).toEqual('Test String');
-        expect(readableStatusFilter("ONE_TWO")).toEqual('One Two');
-        expect(readableStatusFilter("ERROR_MISSING_DATA")).toEqual('Error Missing Data');
+        expect(readableStatusFilter('TEST_STRING')).toEqual('Test String');
+        expect(readableStatusFilter('ONE_TWO')).toEqual('One Two');
+        expect(readableStatusFilter('ERROR_MISSING_DATA')).toEqual('Error Missing Data');
       }));
     });
 
     describe('cssName', function() {
       it('should return the arbitrary css class associated with the status string', inject(function(cssNameFilter) {
-        expect(cssNameFilter("UNKNOWN")).toEqual('label-inverse');
-        expect(cssNameFilter("NOT_STARTED")).toEqual('label-inverse');
-        expect(cssNameFilter("STARTING")).toEqual('label-inverse');
-        expect(cssNameFilter("BUILDING")).toEqual('label-inverse');
-        expect(cssNameFilter("ERROR_MISSING_DATA")).toEqual('label-inverse');
-        expect(cssNameFilter("SENT")).toEqual('label-inverse');
-        expect(cssNameFilter("CERTIFIED")).toEqual('label-inverse');
-        expect(cssNameFilter("DENIED")).toEqual('label-inverse');
-        expect(cssNameFilter("CANCELLED")).toEqual('label-inverse');
-        expect(cssNameFilter("NOT_REQUIRED")).toEqual('label-inverse');
-
-        expect(cssNameFilter("PENDED")).toEqual('label-warning');
-        expect(cssNameFilter("MODIFIED")).toEqual('label-warning');
-        expect(cssNameFilter("somethingRandom")).toEqual('label-warning');
+        expect(cssNameFilter('UNKNOWN')).toEqual('label-inverse');
+        expect(cssNameFilter('NOT_STARTED')).toEqual('label-inverse');
+        expect(cssNameFilter('STARTING')).toEqual('label-inverse');
+        expect(cssNameFilter('BUILDING')).toEqual('label-inverse');
+        expect(cssNameFilter('ERROR_MISSING_DATA')).toEqual('label-inverse');
+        expect(cssNameFilter('SENT')).toEqual('label-inverse');
+        expect(cssNameFilter('CERTIFIED')).toEqual('label-inverse');
+        expect(cssNameFilter('DENIED')).toEqual('label-inverse');
+        expect(cssNameFilter('CANCELLED')).toEqual('label-inverse');
+        expect(cssNameFilter('NOT_REQUIRED')).toEqual('label-inverse');
+        expect(cssNameFilter('PENDED')).toEqual('label-warning');
+        expect(cssNameFilter('MODIFIED')).toEqual('label-warning');
+        expect(cssNameFilter('somethingRandom')).toEqual('label-warning');
       }));
     });
 
