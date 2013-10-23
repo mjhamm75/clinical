@@ -58,7 +58,7 @@ angular.module('clinicalApp').filter('readableStatus', function() {
     words.forEach(function(word) {
       result = result + word.charAt(0) + word.slice(1).toLowerCase()+ ' ';
     });
-    return result;
+    return result.trim();
   };
 });
 

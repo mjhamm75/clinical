@@ -18,6 +18,7 @@ module.exports = function(config) {
       'app/bower_components/angular-resource/angular-resource.js',
       'app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'app/scripts/*.js',
+      'app/scripts/filters/encounter.filter.js',
       'app/scripts/**/*.js',
       'test/spec/**/*.js',
 
