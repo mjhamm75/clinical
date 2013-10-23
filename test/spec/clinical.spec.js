@@ -43,4 +43,8 @@ describe('Clinical App', function() {
   describe('controllers', function() {
 
   });
+
+  describe('filters', function() {
+
+  });
 });
