@@ -21,8 +21,11 @@ module.exports = function(config) {
       'app/scripts/filters/encounter.filter.js',
       'app/scripts/**/*.js',
       'test/spec/**/*.js',
-
-      'app/views/**/*.html'
+      'app/views/**/*.html',
+      'app/bower_components/jasmine-jquery/lib/jasmine-jquery.js',
+      // 'test/mocks/encounters.json',
+      // fixtures
+      {pattern: 'test/mocks/*.json', watched: true, served: true, included: false}
     ],
 
     preprocessors: {

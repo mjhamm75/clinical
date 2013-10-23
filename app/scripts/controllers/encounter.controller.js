@@ -8,7 +8,7 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     actionType: 'AUTO_AUTH',
     limit: 10
   }, function(data) {
-    debugger;
     $scope.encounters = data.encounters;
+    // debugger;
   });
 });
