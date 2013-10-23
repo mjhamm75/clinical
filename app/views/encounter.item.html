@@ -1,36 +1,8 @@
 <div class="div-table-row">
   <div class="div-table-cell">
-    <div class='status {{encounter.actions | statusName | cssName}}' data-help='authStatus'>
-      <i>{{encounter.actions | statusName | readableStatus}}</i>
-      <i class="pull-right">{{encounter.actions | statusDate | date:'MMM dd, yyyy'}}</i>
-    </div>
-    <div class="payer" data-help='authPayer'>
-      {{encounter.actors | patientPrimaryPayer}}
-    </div>
-    <div data-help='authSubscriber'>
-      <!-- subscriberId -->
-    </div>
-    <div class="createNewAuth">
-      <a href="#/{{encounter.id}}" ng-click="createNewAuth(encounter)">
-        <i class="icon-edit"></i>Detail
-      </a>
-    </div>
+    {{encounter.patient.lastName}}
   </div>
   <div class="div-table-cell">
-    <i class="patient-name" >{{patientName}}</i>
-    <br />
-    <i data-help="patientBirthday">{{dob}}</i>
-  </div>
-  <div class="div-table-cell">
-    <i>{{provider}}</i>
-    <br />
-    <i>{{npi}}</i>
-  </div>
-  <div class="div-table-cell">
-    <i>{{requestType}}</i>
-    <br />
-    <i>{{requestDate}}</i>
-    <br />
-    <i > <i class="icon-file icon-idicator"></i>
+    {{encounter.patient.firstName}}
   </div>
 </div>

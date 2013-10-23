@@ -28,6 +28,18 @@ describe('Clinical App', function() {
     });
 
     describe('encounterList', function() {
+      beforeEach(module('app/views/encounter.item.table.html'));
+      beforeEach(inject(function($templateCache, $compile, $rootScope) {
+        template = $templateCache.get('app/views/encounter.item.table.html');
+        $templateCache.put('views/encounter.item.table.html', template);
+        var directive = angular.element('<div encounter-item-table></div>');
+        element = $compile(directive)($rootScope);
+        $rootScope.$digest();
+      }));
+
+      it('should give a table of encounters', function() {
+        console.log(element);
+      });
     });
 
     describe('chatContainer', function() {
