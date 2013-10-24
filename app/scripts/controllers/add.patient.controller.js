@@ -1,15 +1,15 @@
 'use strict';
 
-angular.module('clinicalApp').controller('AddPatientCtrl', function ($scope, $routeParams, $modal, encounterService) {
+angular.module('clinicalApp').controller('AddPatientCtrl', function ($scope, $routeParams, $modal) {
   $scope.open = function() {
     var modalInstance = $modal.open({
       templateUrl:'views/add.patient.html',
-      controller:'AddPatientInstanceCtrl'
+      controller: 'AddPatientInstanceCtrl'
     });
-  }
+  };
 });
 
-var AddPatientInstanceCtrl = function($scope, $modalInstance, encounterService) {
+angular.module('clinicalApp').controller('AddPatientInstanceCtrl', function($scope, $modalInstance, encounterService) {
   $scope.model = {};
   $scope.ok = function() {
     var result = {
@@ -18,13 +18,12 @@ var AddPatientInstanceCtrl = function($scope, $modalInstance, encounterService) 
       relationshipToSubscriber: $scope.model.relationshipToSubscriber,
       lastName: $scope.model.lastName,
       firstName: $scope.model.firstName
-    }
+    };
     encounterService.newPatientResult = result;
-    debugger;
     $modalInstance.close();
-  }
+  };
 
   $scope.cancel = function() {
     $modalInstance.dismiss('cancel');
-  }
-}
+  };
+});
