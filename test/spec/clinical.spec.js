@@ -1,8 +1,9 @@
+
 'use strict';
 
 describe('Clinical App', function() {
 
-  var  template, element, httpBackend; 
+  var  template, element, httpBackend;
 
   beforeEach(module('clinicalApp'));
 
@@ -32,12 +33,8 @@ describe('Clinical App', function() {
       beforeEach(inject(function($templateCache, $compile, $injector, $rootScope) {
         template = $templateCache.get('app/views/encounter.item.table.html');
         $templateCache.put('views/encounter.item.table.html', template);
-        debugger;
-        loadJSONFixtures('base/test/mocks/encounters.json');
-        $rootScope.encounters = getJSONFixture('base/test/mocks/encounters.json');
-        //**********
-        // $rootScope.encounters = ;
-        //**********
+        jasmine.getJSONFixtures().fixturesPath = 'base/test/mocks';
+        $rootScope.encounters = loadJSONFixtures('encounters').encounters;
         var directive = angular.element('<div encounter-item-table encounters="encounters"></div>');
         element = $compile(directive)($rootScope);
         $rootScope.$digest();

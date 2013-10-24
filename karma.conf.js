@@ -23,9 +23,9 @@ module.exports = function(config) {
       'test/spec/**/*.js',
       'app/views/**/*.html',
       'app/bower_components/jasmine-jquery/lib/jasmine-jquery.js',
-      // 'test/mocks/encounters.json',
+      'test/mocks/encounters',
       // fixtures
-      {pattern: 'test/mocks/*.json', watched: true, served: true, included: false}
+      //{pattern: 'test/mocks/*.json', watched: true, served: true, included: false}
     ],
 
     preprocessors: {
@@ -36,7 +36,7 @@ module.exports = function(config) {
     exclude: [],
 
     // web server port
-    port: 8080,
+    port: 12121,
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
