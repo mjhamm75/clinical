@@ -139,12 +139,11 @@ describe('Clinical App', function() {
         expect(cssNameFilter('somethingRandom')).toEqual('label-warning');
       }));
     });
-
   });
 });
-};
 
-var setupTemplate = function(templateName, element) {
+
+  var setupTemplate = function(templateName, element) {
   beforeEach(module('app/views/' + templateName));
   beforeEach(inject(function($templateCache, $compile, $rootScope) {
     var template = $templateCache.get('app/views/' + templateName);
