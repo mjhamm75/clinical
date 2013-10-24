@@ -4099,7 +4099,7 @@ input[type="submit"].btn.btn-mini {
   overflow: hidden;
 }
 .modal {
-  display: none;
+  display: block;
   overflow: auto;
   overflow-y: scroll;
   position: fixed;

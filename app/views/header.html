@@ -3,8 +3,8 @@
     <div class="container navbar-container">
       <a class="brand" href="/availity/web/Home"><img src="../img/header-logo.gif" /></a>
       <ul class="nav pull-right">
-        <li>
-          <a href="" ng-click="showAddPatientModal()">
+        <li ng-controller="AddPatientCtrl">
+          <a href="" ng-click="open()">
             <i class="icon-plus"></i>Patient
           </a>
         </li>
