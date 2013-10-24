@@ -17,7 +17,8 @@ var AddPatientInstanceCtrl = function($scope, $modalInstance, encounterService) 
       memberId: $scope.model.memberId,
       relationshipToSubscriber: $scope.model.relationshipToSubscriber,
       lastName: $scope.model.lastName,
-      firstName: $scope.model.firstName
+      firstName: $scope.model.firstName,
+      dateOfBirth: $scope.model.dateOfBirth
     }
     encounterService.newPatientResult = result;
     debugger;

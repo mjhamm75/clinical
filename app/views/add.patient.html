@@ -56,7 +56,7 @@
         <div class="span3 text-right">Birth Date:</div>
         <div class="span9">
           <div class="form-horizontal" ng-controller="DatepickerCtrl">
-            <input type="text" datepicker-popup="MM/dd/yyyy" ng-model="dt" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
+            <input type="text" datepicker-popup="MM/dd/yyyy" ng-model="model.dateOfBirth" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
             <button class="btn" ng-click="open()"><i class="icon-calendar"></i></button>
           </div>
         </div>

@@ -31,8 +31,6 @@ $scope.clear = function () {
     });
   };
 
-
-
   $scope.dateOptions = {
     'year-format': "'yy'",
     'starting-day': 1
