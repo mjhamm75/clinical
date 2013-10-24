@@ -138,14 +138,3 @@ describe('Clinical App', function() {
     });
   });
 });
-
-
-  var setupTemplate = function(templateName, element) {
-  beforeEach(module('app/views/' + templateName));
-  beforeEach(inject(function($templateCache, $compile, $rootScope) {
-    var template = $templateCache.get('app/views/' + templateName);
-    $templateCache.put('views/' + templateName, template);
-    var directive = angular.element(element);
-    element = $compile(directive)($rootScope);
-    $rootScope.$digest();
-  }));
