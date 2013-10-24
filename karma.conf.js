@@ -25,7 +25,7 @@ module.exports = function(config) {
       'app/bower_components/jasmine-jquery/lib/jasmine-jquery.js',
       'test/mocks/encounters',
       // fixtures
-      //{pattern: 'test/mocks/*.json', watched: true, served: true, included: false}
+      {pattern: 'test/mocks/*.json', watched: true, served: true, included: false}
     ],
 
     preprocessors: {
