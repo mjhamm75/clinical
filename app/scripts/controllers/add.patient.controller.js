@@ -21,6 +21,7 @@ angular.module('clinicalApp').controller('AddPatientInstanceCtrl', function($sco
       dateOfBirth: $scope.model.dateOfBirth
     }
     encounterService.newPatientResult = result;
+    debugger;
     $modalInstance.close();
   };
 
