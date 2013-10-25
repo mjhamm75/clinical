@@ -1,19 +1,21 @@
 'use strict';
 
 angular.module('clinicalApp').controller('DatepickerCtrl', function ($scope, $routeParams, $modal, $timeout) {
- $scope.today = function() {
-  $scope.dt = new Date();
-};
-$scope.today();
+  $scope.today = function() {
+    $scope.dt = new Date();
+  };
 
-$scope.showWeeks = true;
-$scope.toggleWeeks = function () {
-  $scope.showWeeks = ! $scope.showWeeks;
-};
+  $scope.today();
 
-$scope.clear = function () {
-  $scope.dt = null;
-};
+  $scope.showWeeks = true;
+
+  $scope.toggleWeeks = function () {
+    $scope.showWeeks = ! $scope.showWeeks;
+  };
+
+  $scope.clear = function () {
+    $scope.dt = null;
+  };
 
   // Disable weekend selection
   // $scope.disabled = function(date, mode) {
@@ -32,7 +34,7 @@ $scope.clear = function () {
   };
 
   $scope.dateOptions = {
-    'year-format': "'yy'",
+    'year-format': 'yy',
     'starting-day': 1
   };
 });
