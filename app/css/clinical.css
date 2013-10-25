@@ -45,6 +45,10 @@
 .control-group .controls select {
   height: 38px;
 }
+.ng-hide {
+  display: block !important;
+  visibility: hidden !important;
+}
 .modal-body {
   max-height: 600px;
 }
