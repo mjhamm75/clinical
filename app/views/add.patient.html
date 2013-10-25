@@ -40,16 +40,16 @@
         <div class="control-group">
           <label class="control-label">Last Name:</label>
           <div class="controls">
-            <input class="input-thick" type="text" ng-model="model.lastName" required></input>
-            <p class="help-block hide-keep">add your article title here</p>
+            <input name="lastName" ng-minlength="3" class="input-thick" type="text" ng-model="model.lastName" required></input>
+            <p class="" ng-show="addPatientForm.lastName.$dirty && !addPatientForm.lastName.$valid">add your article title here</p>
           </div>
         </div>
 
         <div class="control-group">
           <label class="control-label">First Name:</label>
           <div class="controls">
-            <input class="input-thick" type="text" ng-model="model.firstName" required></input>
-            <p class="help-block hide-keep">add your article title here</p>
+            <input name="firstName" ng-minlength="3"class="input-thick" type="text" ng-model="model.firstName" required></input>
+            <p ng-show="addPatientForm.firstName.$dirty && !addPatientForm.firstName.$valid" >add your article title here</p>
           </div>
         </div>
 

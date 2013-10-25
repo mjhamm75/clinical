@@ -27,6 +27,10 @@
 .div-table .div-table-row .div-table-cell {
   display: table-cell;
 }
+.ng-hide {
+  display: block!important;
+  visibility: hidden!important;
+}
 .payer {
   white-space: nowrap;
   overflow: hidden;
@@ -34,4 +38,10 @@
 }
 .hide-keep {
   visibility: hidden;
+}
+.control-group .controls input {
+  height: 32px;
+}
+.control-group .controls select {
+  height: 38px;
 }
