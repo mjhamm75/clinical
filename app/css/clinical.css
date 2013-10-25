@@ -35,3 +35,10 @@
 .hide-keep {
   visibility: hidden;
 }
+
+.control-group .controls input {
+  height: 32px;
+}
+.control-group .controls select {
+  height: 38px;
+}
