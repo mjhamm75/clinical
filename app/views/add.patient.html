@@ -12,15 +12,15 @@
               <option value="BLUE CROSS BLUE SHIELD OF FLORIDA/BCBSF">Blue Cross Blue Shield of Florida</option>
               <option value="1">HUMANA</option>
             </select>
-            <p class="help-block hide-keep">add your article title here</p>
+            <p class="hide-keep">add your article title here</p>
           </div>
         </div>
 
         <div class="control-group">
           <label class="control-label">Member Id:</label>
           <div class="controls">
-            <input class="input-thick" type="text" ng-model="model.memberId" required>{{memberId}}</input>
-            <p class="help-block hide-keep">add your article title here</p>
+            <input name="memberId" class="input-thick" type="text" ng-model="model.memberId" required></input>
+            <p ng-show="addPatientForm.memberId.$dirty && !addPatientForm.memberId.$valid"><i class="icon-exclamation-sign"></i> Member Id must be provided</p>
           </div>
         </div>
 
@@ -33,23 +33,24 @@
               <option value="CHILD">Child</option>
               <option value="OTHER">Other</option>
             </select>
-            <p class="help-block hide-keep">add your article title here</p>
+            <p class="hide-keep">add your article title here</p>
           </div>
         </div>
 
         <div class="control-group">
           <label class="control-label">Last Name:</label>
           <div class="controls">
-            <input name="lastName" ng-minlength="3" class="input-thick" type="text" ng-model="model.lastName" required></input>
-            <p class="" ng-show="addPatientForm.lastName.$dirty && !addPatientForm.lastName.$valid">add your article title here</p>
+            <input name="lastName" class="input-thick" type="text" ng-model="model.lastName" required></input>
+            <p ng-show="addPatientForm.lastName.$dirty && !addPatientForm.lastName.$valid"><i class="icon-exclamation-sign"></i> Last Name must be at least 2 characters</p>
           </div>
         </div>
 
         <div class="control-group">
           <label class="control-label">First Name:</label>
           <div class="controls">
-            <input name="firstName" ng-minlength="3"class="input-thick" type="text" ng-model="model.firstName" required></input>
-            <p ng-show="addPatientForm.firstName.$dirty && !addPatientForm.firstName.$valid" >add your article title here</p>
+
+            <input name="firstName" class="input-thick" type="text" ng-model="model.firstName" required></input>
+            <p ng-show="addPatientForm.firstName.$dirty && !addPatientForm.firstName.$valid"><i class="icon-exclamation-sign"></i> First Name must be at least 2 characters</p>
           </div>
         </div>
 

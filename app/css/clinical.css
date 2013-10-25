@@ -45,3 +45,6 @@
 .control-group .controls select {
   height: 38px;
 }
+.modal-body {
+  max-height: 600px;
+}
