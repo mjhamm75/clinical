@@ -18,7 +18,7 @@ angular.module('clinicalApp').controller('AddPatientInstanceCtrl', function($sco
       relationshipToSubscriber: $scope.model.relationshipToSubscriber,
       lastName: $scope.model.lastName,
       firstName: $scope.model.firstName,
-      dateOfBirth: $scope.model.dateOfBirth
+      dateOfBirth: $scope.model.dateOfBirth.toISOString()
     }
     encounterService.newPatientResult = result;
     debugger;
