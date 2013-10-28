@@ -12,6 +12,7 @@ angular.module('clinicalApp').controller('AddPatientCtrl', function ($scope, $ro
 angular.module('clinicalApp').controller('AddPatientInstanceCtrl', function($scope, $modalInstance, encounterService) {
   $scope.model = {};
   $scope.ok = function() {
+    debugger;
     var result = {
       payer: $scope.model.payer,
       memberId: $scope.model.memberId,

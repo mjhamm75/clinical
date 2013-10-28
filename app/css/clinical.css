@@ -27,6 +27,9 @@
 .div-table .div-table-row .div-table-cell {
   display: table-cell;
 }
+.form-error {
+  color: red;
+}
 .ng-hide {
   display: block!important;
   visibility: hidden!important;
@@ -38,6 +41,12 @@
 }
 .hide-keep {
   visibility: hidden;
+}
+input.ng-invalid.ng-dirty {
+  border-color: #e9322d;
+  -webkit-box-shadow: 0 0 6px #f8b9b7;
+  -moz-box-shadow: 0 0 6px #f8b9b7;
+  box-shadow: 0 0 6px #f8b9b7;
 }
 .control-group .controls input {
   height: 32px;

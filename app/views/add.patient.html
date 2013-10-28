@@ -20,7 +20,7 @@
           <label class="control-label">Member Id:</label>
           <div class="controls">
             <input ng-minlength="3" name="memberId" class="input-thick" type="text" ng-model="model.memberId" required></input>
-            <p ng-show="addPatientForm.memberId.$dirty && !addPatientForm.memberId.$valid"><i class="icon-exclamation-sign"></i> Member Id must be provided</p>
+            <p ng-show="addPatientForm.memberId.$dirty && !addPatientForm.memberId.$valid" class="form-error"><i class="icon-exclamation-sign"></i> Member Id must be provided</p>
           </div>
         </div>
 
@@ -41,7 +41,7 @@
           <label class="control-label">Last Name:</label>
           <div class="controls">
             <input ng-minlength="3" name="lastName" class="input-thick" type="text" ng-model="model.lastName" required></input>
-            <p ng-show="addPatientForm.lastName.$dirty && !addPatientForm.lastName.$valid"><i class="icon-exclamation-sign"></i> Last Name must be at least 2 characters</p>
+            <p ng-show="addPatientForm.lastName.$dirty && !addPatientForm.lastName.$valid" class="form-error"><i class="icon-exclamation-sign"></i> Last Name must be at least 2 characters</p>
           </div>
         </div>
 
@@ -50,7 +50,7 @@
           <div class="controls">
 
             <input ng-minlength="3" name="firstName" class="input-thick" type="text" ng-model="model.firstName" required></input>
-            <p ng-show="addPatientForm.firstName.$dirty && !addPatientForm.firstName.$valid"><i class="icon-exclamation-sign"></i> First Name must be at least 2 characters</p>
+            <p ng-show="addPatientForm.firstName.$dirty && !addPatientForm.firstName.$valid" class="form-error"><i class="icon-exclamation-sign"></i> First Name must be at least 2 characters</p>
           </div>
         </div>
 
@@ -58,7 +58,7 @@
           <label class="control-label">Birth Date:</label>
           <div class="controls">
             <div class="form-horizontal" ng-controller="DatepickerCtrl">
-              <input class="input-thick" type="text" datepicker-popup="MM/dd/yyyy" ng-model="dt" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" required/>
+              <input class="input-thick" type="text" datepicker-popup="MM/dd/yyyy" ng-model="model.dateOfBirth" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" required/>
               <button class="btn" ng-click="open()"><i class="icon-calendar"></i></button>
             </div>
           </div>
