@@ -1,0 +1,49 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h1>Filter</h1>
+    </div>
+    <form class="form-horizontal" name="addPatientForm">
+      <div class="control-group">
+        <label class="control-label">Auth Request Type:</label>
+        <div class="controls">
+          <input name="authRequestType" class="input-thick" type="text" ng-model='authRequestType'></input>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Date Range:</label>
+        <div class="controls">
+          <div class="form-horizontal" ng-controller="DatepickerCtrl">
+            <input name="dateRange" class="input-thick" type="text" datepicker-popup="MM/dd/yyyy" ng-model="dateRange" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" />
+            <button class="btn" ng-click="open()"><i class="icon-calendar"></i></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Facility - Actor Ids:</label>
+        <div class="controls">
+          <select ng-model="facilityActorIds" required>
+            <option value="SELF">0001194</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Payer:</label>
+        <div class="controls">
+          <input name="payer" class="input-thick" type="text" ng-model='payer'></input>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Action Status:</label>
+        <div class="controls">
+          <input name="actionStatuses" class="input-thick" type="text" ng-model='actionStatuses'></input>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
