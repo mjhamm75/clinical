@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $routeParams , encounterService, encounterFormService) {
+angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $routeParams , encounterService) {
   encounterService.search({
     actorType: 'PROVIDER_REQUESTING',
     actorIds: '0001194',
@@ -9,6 +9,11 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     limit: 10
   }, function(data) {
     $scope.encounters = data.encounters;
-    // debugger;
+  });
+
+  $scope.$on('selectedRow', function(event, data) {
+    debugger;
+    $scope.selectedIndex = data.rowIndex;
+    $scope.selectedEncounter = $scope.encounters[data.rowIndex];
   });
 });
