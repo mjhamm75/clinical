@@ -58,11 +58,13 @@
           <label class="control-label">Birth Date:</label>
           <div class="controls">
             <div class="form-horizontal" ng-controller="DatepickerCtrl">
-              <input class="input-thick" type="text" datepicker-popup="MM/dd/yyyy" ng-model="model.dateOfBirth" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" required/>
+              <input name="birthdate" class="input-thick" type="text" datepicker-popup="MM/dd/yyyy" ng-model="model.dateOfBirth" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" required />
               <button class="btn" ng-click="open()"><i class="icon-calendar"></i></button>
+              <!-- <p ng-show="addPatientForm.birthdate.$dirty" class="form-error"><i class="icon-exclamation-sign"></i> Birthdate must be valid date</p> -->
             </div>
           </div>
         </div>
+
       </div>
 
       <div class="modal-footer">
