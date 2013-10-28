@@ -6,8 +6,11 @@ angular.module('clinicalApp', ['ngRoute', 'ui.bootstrap', 'ngResource']).config(
         templateUrl: 'views/main.html',
         controller: 'EncounterCtrl'
       })
-      .when('/:id',{
+      .when('/detail/:id',{
         templateUrl:'views/patient.detail.html'
+      })
+      .when('/new-auth', {
+        templateUrl:'views/new.auth.html'
       })
       .otherwise({
         redirectTo: '/'

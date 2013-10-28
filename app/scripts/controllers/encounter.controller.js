@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $routeParams , encounterService) {
+angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $routeParams , encounterService, encounterFormService) {
   encounterService.search({
     actorType: 'PROVIDER_REQUESTING',
     actorIds: '0001194',

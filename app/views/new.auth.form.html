@@ -1,0 +1,69 @@
+<form class="form-horizontal" name="newAuthForm">
+  <div class="control-group">
+    <label class="control-label" >Auth Request Type:</label>
+    <div class="controls">
+      <select ng-model="model.authRequestType" required ng-options="type as type for type in requestTypeDropDown.values">
+
+      </select>
+      <p class="hide-keep">add your article title here</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" >Type of Service:</label>
+    <div class="controls">
+      <select ng-model="model.typeOfService" required ng-options="">
+
+      </select>
+      <p class="hide-keep">add your article title here</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" >Place of Service:</label>
+    <div class="controls">
+      <select ng-model="model.placeOfService" required ng-options="">
+
+      </select>
+      <p class="hide-keep">add your article title here</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Service Date:</label>
+    <div class="controls">
+      <div class="form-horizontal" ng-controller="DatepickerCtrl">
+        <input name="birthdate" class="input-thick" type="text" datepicker-popup="MM/dd/yyyy" ng-model="model.serviceDate" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" required />
+        <button class="btn" ng-click="open()"><i class="icon-calendar"></i></button>
+        <p class="hide-keep">add your article title here</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label" >Service Quantity/Type</label>
+    <div class="controls">
+      <select ng-model="model.serviceQuantityType" required ng-options="requestType as requestType for requestType in">
+
+      </select>
+      <p class="hide-keep">add your article title here</p>
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <label class="control-label">Diagnosis Code:</label>
+    <div class="controls">
+      <input ng-minlength="3" name="diagnosisCode" class="input-thick" type="text" ng-model="model.diagnosisCode" required></input>
+      <p ng-show="newAuthForm.diagnosisCode.$dirty && !newAuthForm.diagnosisCode.$valid" class="form-error"><i class="icon-exclamation-sign"></i> Diagnosis code must be at least 2 characters</p>
+    </div>
+  </div>
+
+    <div class="control-group">
+    <label class="control-label">Procedure Code:</label>
+    <div class="controls">
+      <input ng-minlength="3" name="procedureCode" class="input-thick" type="text" ng-model="model.procedureCode" required></input>
+      <p ng-show="newAuthForm.procedureCode.$dirty && !newAuthForm.procedureCode.$valid" class="form-error"><i class="icon-exclamation-sign"></i> Procedure code must be at least 2 characters</p>
+    </div>
+  </div>
+</form>
