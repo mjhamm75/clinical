@@ -1,8 +1,8 @@
 <div class="messages-container">
   <ul class="scrollable unstyled">
     <li ng-repeat="message in messages" class="message">
-      <header>
-        <span class="message-name muted">{{message.author.firstName}} {{message.author.lastName}}</span><i class="icon-clock-1"></i>
+      <header class="message-name muted">
+        <span>{{message.author.firstName}} {{message.author.lastName}}</span><i class="icon-clock"></i>{{message.timestamp | date: 'MMM dd'}} at {{message.timestamp | date: 'hh:mm a'}}
       </header>
       <hr>
       <div class="message-post">

@@ -84,11 +84,33 @@ input.ng-invalid.ng-dirty {
 #encounter-table {
   border: 2px solid #e0dfdc;
 }
+#encounter-table tr th {
+  background-color: #8b8d8e;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 80%;
+}
+#encounter-table tr .status {
+  margin-bottom: 5px;
+  font-weight: normal;
+  text-transform: uppercase;
+  min-height: 15px;
+  width: auto;
+  overflow: hidden;
+  color: white;
+}
+#encounter-table tr td i {
+  margin-left: 5px;
+}
 .chat-container {
-  margin-top: 145px;
+  margin-top: 142px;
 }
 .chat-container .chat-header {
-  height: 1.5em;
+  min-height: 1.5em;
+  color: #ffffff;
+  padding: 8px;
+  margin: 0;
+  background-color: #8b8d8e;
 }
 .chat-container .chat-body {
   background-color: #8b8d8e;
@@ -108,4 +130,15 @@ input.ng-invalid.ng-dirty {
   border-radius: 5px;
   margin: 5px 0;
   background-color: #ffffff;
+}
+.messages-container .message .message-name {
+  font-size: 80%;
+}
+.messages-container .message hr {
+  margin-top: 5px;
+}
+.messages-container .message .message-post {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 12px;
 }
