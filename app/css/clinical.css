@@ -81,3 +81,12 @@ input.ng-invalid.ng-dirty {
 .card h3 {
   margin-left: 5px;
 }
+.chat-container {
+  margin-top: 145px;
+}
+.chat-container .chat-header {
+  height: 1.5em;
+}
+.chat-container #chat-box {
+  width: 100%;
+}
