@@ -10,7 +10,7 @@ angular.module('clinicalApp').factory('encounterService', function ($resource) {
       }
     },
     save: {
-      method: 'PUT',
+      method: 'POST',
       headers: {
         'RemoteUser': 'jhornsby',
         'Content-Type': 'application/json'
