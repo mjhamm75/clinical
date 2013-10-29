@@ -11,7 +11,7 @@ angular.module('clinicalApp').directive('encounterItemTable', function () {
 
     link: function(scope) {
       scope.getSelectedRow = function(index) {
-        scope.$broadcast('selectedRow', { rowIndex: index });
+        scope.selectedIndex = index;
       };
     }
   };

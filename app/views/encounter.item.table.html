@@ -8,7 +8,7 @@
     </tr>
   </thead>
   <tbody id="encounter-tbody">
-    <tr  ng-class="{selected: $index==selectedIndex}" ng-repeat="encounter in encounters | filter:search" data-id="{{encounter.id}}" ng-click="getSelectedRow($index)">
+    <tr  ng-class="{selected: $index== $parent.selectedIndex}" ng-repeat="encounter in encounters | filter:search" data-id="{{encounter.id}}" ng-click="getSelectedRow($index)">
       <td class="statusContainer">
         <div class='status {{encounter.actions | statusName | cssName}}' data-help='authStatus'>
           <i>{{encounter.actions | statusName | readableStatus}}</i>
