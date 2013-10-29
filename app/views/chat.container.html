@@ -9,7 +9,7 @@
         <textarea id="chatBox" ng-model="chatText" ng-keyup="updateCount(chatText)" class="chat-box" rows="2"></textarea>
       </div>
       <div class="counter-container pull-right">
-        <span class="muted" id="counter">{{count}}</span>
+        <span class="muted" id="counter">{{countRemaining}}</span>
       </div>
       <div class="button-container btn-group btn-group-chat">
         <input id="comment" class="btn btn-primary btn-small btn-comment disabled" value="Comment" ng-click="addMessage(chatText)"/>

@@ -1,28 +1,28 @@
 'use strict';
 
-angular.module('clinicalApp').directive('chatContainer', ['encounterService', function(encounterService) {
+angular.module('clinicalApp').directive('chatContainer', function() {
   return {
     scope: {
-      count: '='
+      maxChatCount: '='
     },
 
     templateUrl: 'views/chat.container.html',
 
     link: function(scope) {
-      scope.countStart = scope.count;
+      scope.countRemaining = scope.maxChatCount;
 
       scope.$on('selectedEncounter', function(event, data) {
         scope.encounter = data;
       });
 
       scope.updateCount = function(chatText) {
-        scope.count = scope.countStart - chatText.length;
+        scope.countRemaining = scope.maxChatCount - chatText.length;
       };
 
-      scope.addMessage = function(message) {
-        encounterService.save({
-          id: scope.encounter.id
-        });
+      scope.addMessage = function() {
+        // encounterService.save({
+        //   id: scope.encounter.id
+        // });
         scope.resetChat();
       };
 
@@ -32,4 +32,4 @@ angular.module('clinicalApp').directive('chatContainer', ['encounterService', fu
       };
     }
   };
-}]);
+});
