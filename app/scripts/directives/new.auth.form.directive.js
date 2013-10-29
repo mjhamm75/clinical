@@ -28,11 +28,11 @@ angular.module('clinicalApp').directive('newAuthForm', function (encounterFormSe
 
       scope.addDiagnosisCode = function(newCode) {
         scope.model.diagnosisCodes.push(newCode);
-      }
+      };
 
       scope.addProcedureCode = function(newCode) {
         scope.model.procedureCodes.push(newCode);
-      }
+      };
 
       scope.getRequestTypeDropDown = function() {
         if(scope.dropDownConfigurations) {
@@ -42,7 +42,13 @@ angular.module('clinicalApp').directive('newAuthForm', function (encounterFormSe
             }
           }
         }
-      }
+
+        // scope.dropDownConfigurations.forEach(function(entry) {
+        //   if(entry.field === 'requestType') {
+        //     return entry;
+        //   }
+        // });
+      };
 
       scope.getServiceTypeDropDown = function(requestTypeValue) {
         for(var i=0; i<scope.dropDownConfigurations.length; i++) {
@@ -51,7 +57,7 @@ angular.module('clinicalApp').directive('newAuthForm', function (encounterFormSe
             return scope.dropDownConfigurations[i];
           }
         }
-      }
+      };
 
       scope.getPlaceOfServiceDropDown = function (requestTypeValue) {
         for(var i=0; i<scope.dropDownConfigurations.length; i++) {
@@ -60,12 +66,12 @@ angular.module('clinicalApp').directive('newAuthForm', function (encounterFormSe
             return scope.dropDownConfigurations[i];
           }
         }
-      }
+      };
 
       scope.populateDropDowns = function(requestTypeValue) {
         scope.getPlaceOfServiceDropDown(requestTypeValue);
         scope.getServiceTypeDropDown(requestTypeValue);
-      }
+      };
 
 
       scope.hasDependency = function(dependency, dependencyList) {
@@ -73,11 +79,11 @@ angular.module('clinicalApp').directive('newAuthForm', function (encounterFormSe
           return true;
         }
         return false;
-      }
+      };
 
       scope.submit = function() {
         scope.result = scope.model;
-      }
+      };
     }
   };
 });
