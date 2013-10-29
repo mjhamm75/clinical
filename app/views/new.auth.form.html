@@ -34,9 +34,9 @@
     <label class="control-label">Service Date:</label>
     <div class="controls">
       <div class="form-horizontal" ng-controller="DatepickerCtrl">
-        <input name="birthdate" class="input-thick" type="text" datepicker-popup="MM/dd/yyyy" ng-model="model.serviceDate" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" required />
+        <input name="servcieDate" class="input-thick" type="text" datepicker-popup="MM/dd/yyyy" ng-model="model.serviceDate" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" required />
         <button class="btn" ng-click="open()"><i class="icon-calendar"></i></button>
-        <p class="hide-keep">add your article title here</p>
+        <p class="form-error" ng-show="newAuthForm.serviceDate.$dirty">add your article title here</p>
       </div>
     </div>
   </div>
@@ -61,6 +61,11 @@
     <div class="controls">
       <input ng-minlength="3" name="diagnosisCode" class="input-thick" type="text" ng-model="model.diagnosisCode" required></input>
       <a href="" class='btn' ng-click="addDiagnosisCode(model.diagnosisCode)">+</a>
+      <ul class="">
+        <li ng-repeat="diagnosisCode in model.diagnosisCodes">
+          {{diagnosisCode}}
+        </li>
+      </ul>
       <p ng-show="newAuthForm.diagnosisCode.$dirty && !newAuthForm.diagnosisCode.$valid" class="form-error"><i class="icon-exclamation-sign"></i> Diagnosis code must be at least 2 characters</p>
     </div>
   </div>
@@ -70,6 +75,11 @@
     <div class="controls">
       <input ng-minlength="3" name="procedureCode" class="input-thick" type="text" ng-model="model.procedureCode" required></input>
       <a href="" class='btn' ng-click="addProcedureCode(model.procedureCode)">+</a>
+      <ul class="">
+        <li ng-repeat="procedureCode in model.procedureCodes">
+          {{procedureCode}}
+        </li>
+      </ul>
       <p ng-show="newAuthForm.procedureCode.$dirty && !newAuthForm.procedureCode.$valid" class="form-error"><i class="icon-exclamation-sign"></i> Procedure code must be at least 2 characters</p>
     </div>
   </div>
@@ -77,21 +87,24 @@
   <div class="control-group">
     <label class="control-label">Refer-to-Provider:</label>
     <div class="controls">
-      <select name="referToProvider" ng-model="model.provider" ng-options="provider.id as provider.id + '-' + provider.lastName + ', ' + provider.firstName for provider in providers" required></select>
-      <p class="hide-keep">add your article title here</p>
+      <select name="referToProvider" ng-model="model.provider" ng-options="provider.id as provider.id + '-' + provider.lastName + ', ' + provider.firstName for provider in providers" required>
+        <option value="">Select Refer to Provider</option>
+      </select>
+      <p ng-show="newAuthForm.referToProvider.$dirty && newAuthForm.referToProvider.$invalid" class="form-error">Refer to Provider Required</p>
     </div>
   </div>
 
   <div class="control-group">
-    <label class="control-label">Refer-to-Provider:</label>
+    <label class="control-label">Refer-to-Facility:</label>
     <div class="controls">
       <select name="referToFacility" ng-model="model.facility" required>
+        <option value="">Select Refer to Facility</option>
         <option value="placeholder">Placeholder</option>
         <option value="placeholder">Placeholder</option>
         <option value="placeholder">Placeholder</option>
         <option value="placeholder">Placeholder</option>
       </select>
-      <p class="hide-keep">add your article title here</p>
+      <p ng-show="newAuthForm.referToFacility.$dirty && newAuthForm.referToFacility.$invalid" class="form-error">Refer to Facility Required</p>
     </div>
   </div>
 
