@@ -60,7 +60,7 @@
     <label class="control-label">Diagnosis Code:</label>
     <div class="controls">
       <input ng-minlength="3" name="diagnosisCode" class="input-thick" type="text" ng-model="model.diagnosisCode" required></input>
-      <a href="" class='btn' ng-click="addDiagnosisCode(model.diagnosisCode)">+</a>
+      <button class='btn' ng-click="addDiagnosisCode(model.diagnosisCode)" ng-disabled="!model.diagnosisCode">+</button>
       <ul class="">
         <li ng-repeat="diagnosisCode in model.diagnosisCodes">
           {{diagnosisCode}}
@@ -74,7 +74,7 @@
     <label class="control-label">Procedure Code:</label>
     <div class="controls">
       <input ng-minlength="3" name="procedureCode" class="input-thick" type="text" ng-model="model.procedureCode" required></input>
-      <a href="" class='btn' ng-click="addProcedureCode(model.procedureCode)">+</a>
+      <button class='btn' ng-click="addProcedureCode(model.procedureCode)" ng-disabled="!model.procedureCode">+</button>
       <ul class="">
         <li ng-repeat="procedureCode in model.procedureCodes">
           {{procedureCode}}
