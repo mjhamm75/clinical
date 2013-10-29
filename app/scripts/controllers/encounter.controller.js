@@ -10,4 +10,13 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
   }, function(data) {
     $scope.encounters = data.encounters;
   });
+
+  if($routeParams.id){
+    encounterService.search({
+      encounterId: $routeParams.id
+    }, function(data) {
+      $scope.encounter = data.encounter;
+    });
+  }
+
 });
