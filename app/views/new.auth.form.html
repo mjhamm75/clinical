@@ -1,31 +1,32 @@
-<form class="form-horizontal" name="newAuthForm">
+<form  name="newAuthForm" novalidate class="form-horizontal">
   <div class="control-group">
     <label class="control-label" >Auth Request Type:</label>
     <div class="controls">
-      <select ng-model="model.authRequestType" required ng-options="type as type for type in requestTypeDropDown.values" ng-change="populateDropDowns(model.authRequestType)">
+      <select name="requestType" ng-model="model.authRequestType" required ng-options="type.id as type.value for type in requestTypeDropDown.values" ng-change="populateDropDowns(model.authRequestType)">
+        <option value="">Select Auth Request Type</option>
 
       </select>
-      <p class="hide-keep">add your article title here</p>
+      <p ng-show="newAuthForm.requestType.$dirty && newAuthForm.requestType.$invalid" class="form-error">Auth Request Type Required</p>
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label" >Type of Service:</label>
     <div class="controls">
-      <select ng-model="model.typeOfService" required ng-options="type as type for type in serviceTypeDropDown.values">
-
+      <select name="serviceType" ng-model="model.typeOfService" required ng-options="type.id as type.value for type in serviceTypeDropDown.values">
+        <option value="">Select Type of Service</option>
       </select>
-      <p class="hide-keep">add your article title here</p>
+      <p ng-show="newAuthForm.serviceType.$dirty && newAuthForm.serviceType.$invalid" class="form-error">Type of Service Required</p>
     </div>
   </div>
 
   <div class="control-group">
     <label class="control-label" >Place of Service:</label>
     <div class="controls">
-      <select ng-model="model.placeOfService" required ng-options="type as type for type in servicePlaceDropDown.values">
-
+      <select name="servicePlace" ng-model="model.placeOfService" required ng-options="type.id as type.value for type in servicePlaceDropDown.values">
+        <option value="">Select Place of Service</option>
       </select>
-      <p class="hide-keep">add your article title here</p>
+      <p class="form-error" ng-show="newAuthForm.servicePlace.$dirty && newAuthForm.servicePlace.$invalid">Place of Service Required</p>
     </div>
   </div>
 
@@ -43,13 +44,14 @@
   <div class="control-group">
     <label class="control-label" >Service Quantity/Type</label>
     <div class="controls">
-      <select ng-model="model.serviceQuantityType" required>
-        <option>Hours</option>
-        <option>Days</option>
-        <option>Units</option>
-        <option>Visits</option>
+      <select name="serviceQT" ng-model="model.serviceQuantityType" required>
+      	<option value="">Select Service Quantity / Type</option>
+        <option value="HOURS">Hours</option>
+        <option value="DAYS">Days</option>
+        <option value="UNITS">Units</option>
+        <option value="VISITS">Visits</option>
       </select>
-      <p class="hide-keep">add your article title here</p>
+      <p ng-show="newAuthForm.serviceQT.$dirty && newAuthForm.serviceQT.$invalid" class="form-error">Service Type / Quantity Required</p>
     </div>
   </div>
 
@@ -75,7 +77,7 @@
   <div class="control-group">
     <label class="control-label">Refer-to-Provider:</label>
     <div class="controls">
-      <select name="referToProvider" ng-model="model.provider" ng-options="provider.id as provider.id + '-' + provider.lastName + ', ' + provider.firstName for provider in providers"></select>
+      <select name="referToProvider" ng-model="model.provider" ng-options="provider.id as provider.id + '-' + provider.lastName + ', ' + provider.firstName for provider in providers" required></select>
       <p class="hide-keep">add your article title here</p>
     </div>
   </div>
@@ -83,7 +85,7 @@
   <div class="control-group">
     <label class="control-label">Refer-to-Provider:</label>
     <div class="controls">
-      <select name="referToFacility" ng-model="model.facility">
+      <select name="referToFacility" ng-model="model.facility" required>
         <option value="placeholder">Placeholder</option>
         <option value="placeholder">Placeholder</option>
         <option value="placeholder">Placeholder</option>
@@ -93,5 +95,5 @@
     </div>
   </div>
 
-  <a href="" ng-click="submit()" class='btn btn-info'>Submit</a>
+  <button href="" ng-click="submit()" ng-disabled="newAuthForm.$invalid" class='btn btn-info'>Submit</button>
 </form>

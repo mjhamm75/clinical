@@ -13,7 +13,6 @@ angular.module('clinicalApp').directive('newAuthForm', function (encounterFormSe
       encounterFormService.search({}, function(data){
         scope.dropDownConfigurations = data.formConfiguration.dropDownConfigurations;
         scope.requestTypeDropDown = scope.getRequestTypeDropDown();
-        // debugger;
       });
 
       providerService.search({
