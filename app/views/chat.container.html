@@ -1,0 +1,22 @@
+<div class="chat-container">
+ <h5 class="chat-header">
+  <span class="patient-name-container">{{encounter.patient.firstName }} {{encounter.patient.lastName}}</span>
+</h5>
+<div class="chat-body">
+  <div class="message-post-container">
+    <form accept-charset="UTF-8" action="#" method="POST">
+      <div class="text-area-container">
+        <textarea id="chatBox" ng-model="chatText" ng-keyup="updateCount(chatText)" class="chat-box" rows="2"></textarea>
+      </div>
+      <div class="counter-container pull-right">
+        <span class="muted" id="counter">{{countRemaining}}</span>
+      </div>
+      <div class="button-container btn-group btn-group-chat">
+        <input id="comment" class="btn btn-primary btn-small btn-comment disabled" value="Comment" ng-click="addMessage(chatText)"/>
+      </div>
+    </form>
+    <div messages-container messages="encounter.comments">
+    </div>
+  </div>
+</div>
+</div>
