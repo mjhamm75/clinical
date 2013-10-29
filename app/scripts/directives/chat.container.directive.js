@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('clinicalApp').directive('chatContainer', function() {
+angular.module('clinicalApp').directive('chatContainer', ['encounterService', function(encounterService) {
   return {
     scope: {
       maxChatCount: '='
@@ -13,16 +13,16 @@ angular.module('clinicalApp').directive('chatContainer', function() {
 
       scope.$on('selectedEncounter', function(event, data) {
         scope.encounter = data;
+        scope.messages = data.comments;
       });
 
       scope.updateCount = function(chatText) {
         scope.countRemaining = scope.maxChatCount - chatText.length;
       };
 
-      scope.addMessage = function() {
-        // encounterService.save({
-        //   id: scope.encounter.id
-        // });
+      scope.addMessage = function(message) {
+        scope.encounter.comments.push({message: message});
+        encounterService.save({}, scope.encounter);
         scope.resetChat();
       };
 
@@ -32,4 +32,4 @@ angular.module('clinicalApp').directive('chatContainer', function() {
       };
     }
   };
-});
+}]);

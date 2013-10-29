@@ -1,0 +1,13 @@
+<div class="messages-container">
+  <ul class="scrollable">
+    <li ng-repeat="message in messages">
+      <header>
+        <span class="message-name muted">{{message.author.firstName}} {{message.author.lastName}}</span><i class="icon-clock-1"></i>
+      </header>
+      <hr>
+      <div class="message-post">
+        <p>{{message.message}}</p>
+      </div>
+    </li>
+  </ul>
+</div>
