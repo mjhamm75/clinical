@@ -1,0 +1,19 @@
+Patient Demographics<br>
+
+<dl>
+  <dt>
+    Patient First Name: {{encounter.patient.firstName}}
+  </dt>
+  <dt>
+    Patient Last Name: {{encounter.patient.lastName}}
+  </dt>
+  <dt>
+    Date of Birth: {{encounter.patient.dateOfBirth | date:'MMM dd, yyyy'}}
+  </dt>
+  <dt>
+    Gender: {{encounter.patient.gender | lowercase}}
+  </dt>
+  <dt>
+    Patient Class: {{encounter.patient.patientClass | lowercase}}
+  </dt>
+</dl>

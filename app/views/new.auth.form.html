@@ -2,7 +2,7 @@
   <div class="control-group">
     <label class="control-label" >Auth Request Type:</label>
     <div class="controls">
-      <select ng-model="model.authRequestType" required ng-options="type as type for type in requestTypeDropDown.values" ng-change="alert('hi')">
+      <select ng-model="model.authRequestType" required ng-options="type as type for type in requestTypeDropDown.values" ng-change="populateDropDowns(model.authRequestType)">
 
       </select>
       <p class="hide-keep">add your article title here</p>
@@ -12,7 +12,7 @@
   <div class="control-group">
     <label class="control-label" >Type of Service:</label>
     <div class="controls">
-      <select ng-model="model.typeOfService" required >
+      <select ng-model="model.typeOfService" required ng-options="type as type for type in serviceTypeDropDown.values">
 
       </select>
       <p class="hide-keep">add your article title here</p>
@@ -22,7 +22,7 @@
   <div class="control-group">
     <label class="control-label" >Place of Service:</label>
     <div class="controls">
-      <select ng-model="model.placeOfService" required>
+      <select ng-model="model.placeOfService" required ng-options="type as type for type in servicePlaceDropDown.values">
 
       </select>
       <p class="hide-keep">add your article title here</p>
@@ -44,7 +44,10 @@
     <label class="control-label" >Service Quantity/Type</label>
     <div class="controls">
       <select ng-model="model.serviceQuantityType" required>
-
+        <option>Hours</option>
+        <option>Days</option>
+        <option>Units</option>
+        <option>Visits</option>
       </select>
       <p class="hide-keep">add your article title here</p>
     </div>
@@ -55,15 +58,40 @@
     <label class="control-label">Diagnosis Code:</label>
     <div class="controls">
       <input ng-minlength="3" name="diagnosisCode" class="input-thick" type="text" ng-model="model.diagnosisCode" required></input>
+      <a href="" class='btn' ng-click="addDiagnosisCode(model.diagnosisCode)">+</a>
       <p ng-show="newAuthForm.diagnosisCode.$dirty && !newAuthForm.diagnosisCode.$valid" class="form-error"><i class="icon-exclamation-sign"></i> Diagnosis code must be at least 2 characters</p>
     </div>
   </div>
 
-    <div class="control-group">
+  <div class="control-group">
     <label class="control-label">Procedure Code:</label>
     <div class="controls">
       <input ng-minlength="3" name="procedureCode" class="input-thick" type="text" ng-model="model.procedureCode" required></input>
+      <a href="" class='btn' ng-click="addProcedureCode(model.procedureCode)">+</a>
       <p ng-show="newAuthForm.procedureCode.$dirty && !newAuthForm.procedureCode.$valid" class="form-error"><i class="icon-exclamation-sign"></i> Procedure code must be at least 2 characters</p>
     </div>
   </div>
+
+  <div class="control-group">
+    <label class="control-label">Refer-to-Provider:</label>
+    <div class="controls">
+      <select name="referToProvider" ng-model="model.provider" ng-options="provider.id as provider.id + '-' + provider.lastName + ', ' + provider.firstName for provider in providers"></select>
+      <p class="hide-keep">add your article title here</p>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label">Refer-to-Provider:</label>
+    <div class="controls">
+      <select name="referToFacility" ng-model="model.facility">
+        <option value="placeholder">Placeholder</option>
+        <option value="placeholder">Placeholder</option>
+        <option value="placeholder">Placeholder</option>
+        <option value="placeholder">Placeholder</option>
+      </select>
+      <p class="hide-keep">add your article title here</p>
+    </div>
+  </div>
+
+  <a href="" ng-click="submit()" class='btn btn-info'>Submit</a>
 </form>
