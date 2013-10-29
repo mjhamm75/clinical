@@ -93,12 +93,34 @@ input.ng-invalid.ng-dirty {
     margin-left: 5px;
   }
 }
+#encounter-table {
+  border: 2px solid #e0dfdc;
+}
+
 .chat-container {
   margin-top: 145px;
   .chat-header {
     height: 1.5em;
   }
-  #chat-box {
-    width: 100%;
+  .chat-body {
+    background-color: #8b8d8e;
+    .message-post-container {
+      padding: 5px 2px;
+      background-color: #ffffff;
+      border: 1px solid #cccccc;
+      #chat-box {
+        width: 100%;
+        padding: 0px;
+      }
+    }
+  }
+}
+.messages-container {
+  .message {
+    padding: 5px;
+    border: 2px solid #cccccc;
+    border-radius: 5px;
+    margin: 5px 0;
+    background-color: #ffffff;
   }
 }
