@@ -10,6 +10,14 @@ angular.module('clinicalApp').factory('encounterService', function ($resource) {
       }
     },
     save: {
+      method: 'PUT',
+      headers: {
+        'RemoteUser': 'jhornsby',
+        'Content-Type': 'application/json'
+      }
+    },
+
+    create:{
       method: 'POST',
       headers: {
         'RemoteUser': 'jhornsby',

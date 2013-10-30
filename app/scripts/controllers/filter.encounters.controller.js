@@ -16,8 +16,8 @@ angular.module('clinicalApp').controller('FilterEncountersInstanceCtrl', functio
     encounterService.search({
       actorType: 'PROVIDER_REQUESTING',
       actorIds: $scope.model.facilityActorIds,
-      actionStatuses: $scope.model.actionStatuses,
-      actionType: 'AUTO_AUTH',
+      actionStatus: $scope.model.actionStatus,
+      actionType: 'AUTO_AUTH',//AUTO_AUTH
       limit: 10
     }, function(data) {
       $rootScope.$broadcast('encountersUpdated', data.encounters);

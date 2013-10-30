@@ -28,12 +28,14 @@ angular.module('clinicalApp').controller('AddPatientInstanceCtrl', function($sco
 
     encounter.actions = [];
     encounter.actions.push({
+      "actionType" : "AUTO_AUTH",
       "type" : "AUTO_EB",
       "status": "NOT_STARTED",
       "senderId": "0001194",
       "receiverId": $scope.model.payer,
     });
-    encounterService.save({}, encounter, function(data){
+    debugger;
+    encounterService.create({}, encounter, function(data){
     });
     $modalInstance.close();
   };
