@@ -5,14 +5,8 @@
       <h1>Filter</h1>
     </div>
     <form class="form-horizontal" name="addPatientForm">
-      <div class="control-group">
-        <label class="control-label">Auth Request Type:</label>
-        <div class="controls">
-          <input name="authRequestType" class="input-thick" type="text" ng-model='model.authRequestType'></input>
-        </div>
-      </div>
 
-      <div class="control-group">
+ <!--      <div class="control-group">
         <label class="control-label">Date Range:</label>
         <div class="controls">
           <div class="form-horizontal" ng-controller="DatepickerCtrl">
@@ -20,28 +14,35 @@
             <button class="btn" ng-click="open()"><i class="icon-calendar"></i></button>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="control-group">
-        <label class="control-label">Facility - Actor Ids:</label>
+        <label class="control-label">Actor Ids:</label>
         <div class="controls">
-          <select ng-model="model.facilityActorIds" required>
-            <option value="SELF">0001194</option>
+          <select ng-model="model.actorId" required>
+            <option value="0001194">0001194</option>
           </select>
-        </div>
-      </div>
-
-      <div class="control-group">
-        <label class="control-label">Payer:</label>
-        <div class="controls">
-          <input name="payer" class="input-thick" type="text" ng-model='model.payer'></input>
         </div>
       </div>
 
       <div class="control-group">
         <label class="control-label">Action Status:</label>
         <div class="controls">
-          <input name="actionStatuses" class="input-thick" type="text" ng-model='model.actionStatuses'></input>
+          <input name="actionStatus" class="input-thick" type="text" ng-model='model.actionStatus'></input>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Action Type:</label>
+        <div class="controls">
+          <input name="actionType" class="input-thick" type="text" ng-model='model.actionType'></input>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Limit:</label>
+        <div class="controls">
+          <input name="limit" class="input-thick" type="text" ng-model='model.limit'></input>
         </div>
       </div>
 

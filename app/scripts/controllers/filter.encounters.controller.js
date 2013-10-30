@@ -14,12 +14,13 @@ angular.module('clinicalApp').controller('FilterEncountersInstanceCtrl', functio
   $scope.ok = function() {
 
     encounterService.search({
-      actorType: 'PROVIDER_REQUESTING',
-      actorIds: $scope.model.facilityActorIds,
-      actionStatus: $scope.model.actionStatus,
-      actionType: 'AUTO_AUTH',//AUTO_AUTH
-      limit: 10
-    }, function(data) {
+    actorType: 'PROVIDER_REQUESTING',
+    actorId: $scope.model.actorId,
+    actionStatus: $scope.model.actionStatus,//BUILDING, NOT_STARTED
+    actionType: $scope.model.actionType,//AUTO_EB, AUTO_AUTH
+    limit: $scope.model.limit
+  }, function(data) {
+      debugger;
       $rootScope.$broadcast('encountersUpdated', data.encounters);
     });
 
