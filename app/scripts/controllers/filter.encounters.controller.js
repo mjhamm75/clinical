@@ -9,18 +9,20 @@ angular.module('clinicalApp').controller('FilterEncountersCtrl', function ($scop
   };
 });
 
-angular.module('clinicalApp').controller('FilterEncountersInstanceCtrl', function($scope, $modalInstance, encounterService) {
+angular.module('clinicalApp').controller('FilterEncountersInstanceCtrl', function($scope, $rootScope, $modalInstance, encounterService) {
   $scope.model = {};
   $scope.ok = function() {
-    var result = {
-      payer: $scope.model.payer,
-      memberId: $scope.model.memberId,
-      relationshipToSubscriber: $scope.model.relationshipToSubscriber,
-      lastName: $scope.model.lastName,
-      firstName: $scope.model.firstName,
-      dateOfBirth: $scope.model.dateOfBirth.toISOString()
-    };
-    encounterService.newPatientResult = result;
+
+    encounterService.search({
+      actorType: 'PROVIDER_REQUESTING',
+      actorIds: $scope.model.facilityActorIds,
+      actionStatuses: $scope.model.actionStatuses,
+      actionType: 'AUTO_AUTH',
+      limit: 10
+    }, function(data) {
+      $rootScope.$broadcast('encountersUpdated', data.encounters);
+    });
+
     $modalInstance.close();
   };
 

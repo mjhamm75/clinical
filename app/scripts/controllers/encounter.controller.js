@@ -11,6 +11,10 @@ angular.module('clinicalApp').controller('EncounterCtrl', function ($scope, $rou
     $scope.encounters = data.encounters;
   });
 
+  $scope.$on('encountersUpdated', function(data, encounters) {
+    $scope.encounters = encounters;
+  });
+
   if($routeParams.id){
     encounterService.search({
       encounterId: $routeParams.id
