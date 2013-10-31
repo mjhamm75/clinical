@@ -28,7 +28,7 @@ angular.module('clinicalApp').filter('statusName', function() {
   return function(actions) {
     var statusName = '';
     actions.forEach(function(action) {
-      if(action.type === 'AUTO_AUTH') {
+      if(action.type === 'AUTO_AUTH' || action.type === "AUTO_EB") {
         statusName = action.status;
       }
     });

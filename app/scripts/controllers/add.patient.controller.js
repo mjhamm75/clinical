@@ -34,7 +34,6 @@ angular.module('clinicalApp').controller('AddPatientInstanceCtrl', function($sco
       "senderId": "0001194",
       "receiverId": $scope.model.payer,
     });
-    debugger;
     encounterService.create({}, encounter, function(data){
     });
     $modalInstance.close();

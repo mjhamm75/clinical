@@ -20,7 +20,6 @@ angular.module('clinicalApp').controller('FilterEncountersInstanceCtrl', functio
     actionType: $scope.model.actionType,//AUTO_EB, AUTO_AUTH
     limit: $scope.model.limit
   }, function(data) {
-      debugger;
       $rootScope.$broadcast('encountersUpdated', data.encounters);
     });
 
